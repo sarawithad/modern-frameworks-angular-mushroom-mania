@@ -1,0 +1,11 @@
+<h1>allofthemushrooms</h1>
+
+<!-- ng-repeat item is the index in the array, second item is always the array -->
+<div ng-repeat="item in mushrooms | filter: {description:  searchText.search, edible: edibleData}">
+    <div>Mushroom species: {{item.name}}</div><br>
+    <div>Edible? {{item.edible}}</div><br>
+    <div>{{item.description}}</div>
+    <br>
+    <br>
+</div>
+

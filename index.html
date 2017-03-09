@@ -1,0 +1,50 @@
+<!-- Create a basic application, with a single view. Your job is to load the JSON data below and display it in a list. Above the list, provide one text box, and two radio buttons.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mushroom MANIA</title>
+</head>
+
+<!-- ManiaApp: Initialize app -->
+<body ng-app="ManiaApp">
+
+	<div ng-controller="MushroomCtrl">
+
+		<input type="text" ng-model="searchText.search">
+		<input ng-model="edibleData" type="radio" name ="edible" value="false">Poisonous
+		<input ng-model="edibleData" type="radio" name ="edible" value="true">Non-poisonous
+		<!-- Mushroom list should output here -->
+		<div ng-view></div> <!-- this MUST be here for edible filter to work -->
+	</div>
+
+	
+
+
+
+
+<!-- list of scripts -->
+
+<!-- jquery/ angular/ firebase -->
+<script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script>
+
+<!-- app.js needs to go before factories and controllers -->
+<script type="text/javascript" src="app/app.js"></script>
+
+<script type="text/javascript" src="app/values/fb-creds.js"></script>
+
+<!-- factories list -->
+<script type="text/javascript" src="app/factories/MushroomFactory.js"></script>
+<script type="text/javascript" src="app/factories/SearchFilterFactory.js"></script>
+
+<!-- controllers list -->
+<script type="text/javascript" src="app/controllers/MushroomCtrl.js"></script>
+	
+</body>
+</html>
